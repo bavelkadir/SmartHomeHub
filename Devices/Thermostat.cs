@@ -5,7 +5,7 @@ namespace SmartHomeHub.Devices
 {
     public class Thermostat : IDevice
     {
-
+        // lägger till en privat variabel för att hålla reda på temperaturen
         public string Name { get; }
         private double temperature;
 
@@ -16,6 +16,7 @@ namespace SmartHomeHub.Devices
             Name = name;
         }
 
+        // visar att termostaten är på eller av och vilken temperatur den är inställd på
         public void TurnOn()
         {
             isOn = true;
