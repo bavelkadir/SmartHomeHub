@@ -9,20 +9,23 @@ namespace SmartHomeHub.Devices
 
         public string Name { get; private set; }
 
+        // lägger till en privat variabel för att hålla reda på om dörren är låst eller inte
         private bool isLocked;
 
+        // lägger till en konstruktor som tar emot namnet på dörren
         public DoorLock(string name)
         {
             Name = name;
         }
 
-
+        // lägger till en metod för att låsa dörren och en metod för att låsa upp den
         public void TurnOn()
         {
             Lock();
 
         }
 
+        
         public void TurnOff()
         {
 
@@ -30,6 +33,7 @@ namespace SmartHomeHub.Devices
 
         }
 
+        // lägger till en metod för att visa statusen på dörren
         public void Lock()
         {
             isLocked = true;
@@ -38,6 +42,7 @@ namespace SmartHomeHub.Devices
 
         }
 
+        
         public void Unlock()
         {
             isLocked = false;
