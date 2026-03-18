@@ -7,4 +7,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Observer\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Strategy\" />
+    <Folder Include="Core\" />
+  </ItemGroup>
+
 </Project>
