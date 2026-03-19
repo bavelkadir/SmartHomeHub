@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="Commands\" />
     <Folder Include="Strategy\" />
-    <Folder Include="Core\" />
   </ItemGroup>
 
 </Project>
