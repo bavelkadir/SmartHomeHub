@@ -1,6 +1,7 @@
-﻿using SmartHomeHub.Devices;
+﻿using SmartHomeHub.Commands;
+using SmartHomeHub.Core;
+using SmartHomeHub.Devices;
 using SmartHomeHub.Observer;
-
 namespace SmartHomeHub
 {
     internal class Program
@@ -26,7 +27,40 @@ namespace SmartHomeHub
             livingRoomLamp.TurnOn();
             livingRoomLamp.TurnOff();
 
-            
+
+           ////// Lamp lamp = new Lamp("Test Lamp");
+
+           //// var turnOn = new TurnOnCommand(lamp);
+           //// var turnOff = new TurnOffCommand(lamp);
+
+           // turnOn.Execute();
+           // turnOff.Execute();
+
+
+            Lamp lamp = new Lamp("Living Room Lamp");
+
+            CommandInvoker invoker = new CommandInvoker();
+
+            invoker.AddCommand(new TurnOnCommand(lamp));
+            invoker.AddCommand(new TurnOffCommand(lamp));
+            invoker.AddCommand(new TurnOnCommand(lamp));
+
+            invoker.ExecuteCommands();
+
+            Console.WriteLine("\n--- REPLAY ---\n");
+
+            invoker.ReplayLastCommands();
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
