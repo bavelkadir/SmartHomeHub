@@ -64,6 +64,11 @@ Living Room Lamp is ON
 --- PARTY MODE ---
 [PartyMode 🎉] Living Room Lamp: Turned ON fully allowed
 
+
+
+
+
+
 ## 📁 Projektstruktur
 
 ```
