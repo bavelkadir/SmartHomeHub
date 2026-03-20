@@ -1,4 +1,6 @@
-📁 Projektstruktur
+## 📁 Projektstruktur
+
+```
 SmartHomeHub/
 ├── Commands/
 │   ├── ICommand.cs
@@ -25,6 +27,8 @@ SmartHomeHub/
 │   ├── EcoModeStrategy.cs
 │   └── PartyModeStrategy.cs
 └── Program.cs
+```
+
 
 # Smart Home Control Center
 
