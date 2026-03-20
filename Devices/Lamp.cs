@@ -3,7 +3,7 @@ using SmartHomeHub.Observer;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using SmartHomeHub.Strategy;
 namespace SmartHomeHub.Devices
 {
     public class Lamp : IDevice
@@ -33,10 +33,25 @@ namespace SmartHomeHub.Devices
         {
             Console.WriteLine("NotifyObservers is running...");
 
+            if (modeStrategy != null)
+            {
+                modeStrategy.ApplyMode(Name, message);
+            }
+
             foreach (var observer in observers)
             {
                 observer.Update(Name, message);
             }
+        }
+
+        
+
+
+        private IModeStrategy modeStrategy;
+
+        public void SetMode(IModeStrategy strategy)
+        {
+            modeStrategy = strategy;
         }
 
 
