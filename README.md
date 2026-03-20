@@ -1,35 +1,3 @@
-## 📁 Projektstruktur
-
-```
-SmartHomeHub/
-├── Commands/
-│   ├── ICommand.cs
-│   ├── TurnOnCommand.cs
-│   ├── TurnOffCommand.cs
-│   └── SetTemperatureCommand.cs
-├── Core/
-│   ├── AppLogger.cs
-│   ├── CommandInvoker.cs
-│   └── SmartHomeFacade.cs
-├── Devices/
-│   ├── IDevice.cs
-│   ├── Lamp.cs
-│   ├── Thermostat.cs
-│   └── DoorLock.cs
-├── Observer/
-│   ├── IObserver.cs
-│   ├── DashboardObserver.cs
-│   ├── LoggerObserver.cs
-│   └── AuditObserver.cs
-├── Strategy/
-│   ├── IModeStrategy.cs
-│   ├── NormalModeStrategy.cs
-│   ├── EcoModeStrategy.cs
-│   └── PartyModeStrategy.cs
-└── Program.cs
-```
-
-
 # Smart Home Control Center
 
 ## Beskrivning
@@ -95,3 +63,36 @@ Living Room Lamp is ON
 
 --- PARTY MODE ---
 [PartyMode 🎉] Living Room Lamp: Turned ON fully allowed
+
+## 📁 Projektstruktur
+
+```
+SmartHomeHub/
+├── Commands/
+│   ├── ICommand.cs
+│   ├── TurnOnCommand.cs
+│   ├── TurnOffCommand.cs
+│   └── SetTemperatureCommand.cs
+├── Core/
+│   ├── AppLogger.cs
+│   ├── CommandInvoker.cs
+│   └── SmartHomeFacade.cs
+├── Devices/
+│   ├── IDevice.cs
+│   ├── Lamp.cs
+│   ├── Thermostat.cs
+│   └── DoorLock.cs
+├── Observer/
+│   ├── IObserver.cs
+│   ├── DashboardObserver.cs
+│   ├── LoggerObserver.cs
+│   └── AuditObserver.cs
+├── Strategy/
+│   ├── IModeStrategy.cs
+│   ├── NormalModeStrategy.cs
+│   ├── EcoModeStrategy.cs
+│   └── PartyModeStrategy.cs
+└── Program.cs
+```
+
+
