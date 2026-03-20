@@ -2,6 +2,7 @@
 using SmartHomeHub.Core;
 using SmartHomeHub.Devices;
 using SmartHomeHub.Observer;
+using SmartHomeHub.Strategy;
 namespace SmartHomeHub
 {
     internal class Program
@@ -37,22 +38,36 @@ namespace SmartHomeHub
            // turnOff.Execute();
 
 
+            ////Lamp lamp = new Lamp("Living Room Lamp");
+
+            //CommandInvoker invoker = new CommandInvoker();
+
+            //invoker.AddCommand(new TurnOnCommand(lamp));
+            //invoker.AddCommand(new TurnOffCommand(lamp));
+            //invoker.AddCommand(new TurnOnCommand(lamp));
+
+            //invoker.ExecuteCommands();
+
+            //Console.WriteLine("\n--- REPLAY ---\n");
+
+            //invoker.ReplayLastCommands();
+
+
             Lamp lamp = new Lamp("Living Room Lamp");
 
-            CommandInvoker invoker = new CommandInvoker();
+            lamp.AddObserver(new DashboardObserver());
+            lamp.AddObserver(new AuditObserver());
 
-            invoker.AddCommand(new TurnOnCommand(lamp));
-            invoker.AddCommand(new TurnOffCommand(lamp));
-            invoker.AddCommand(new TurnOnCommand(lamp));
+            lamp.SetMode(new EcoModeStrategy());
 
-            invoker.ExecuteCommands();
+            lamp.TurnOn();
+            lamp.TurnOff();
 
-            Console.WriteLine("\n--- REPLAY ---\n");
+            Console.WriteLine("\n--- CHANGE MODE ---\n");
 
-            invoker.ReplayLastCommands();
+            lamp.SetMode(new PartyModeStrategy());
 
-
-
+            lamp.TurnOn();
 
 
 
